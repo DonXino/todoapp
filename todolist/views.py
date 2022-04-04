@@ -23,6 +23,6 @@ def index(request): #the index view
 			checkedlist = request.POST["checkedbox"] #checked todos to be deleted
 			for todo_id in checkedlist:
 				todo = TodoList.objects.get(id=int(todo_id)) #getting todo id
-				todo.delete() #deleting todo
+				todo.delete() #deleting todos
 
 	return render(request, "index.html", {"todos": todos, "categories":categories})
